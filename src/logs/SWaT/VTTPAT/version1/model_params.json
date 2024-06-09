@@ -1,0 +1,12 @@
+{
+    "hidden_size": 128,
+    "n_layer": 3,
+    "n_head": 4,
+    "resid_pdrop": 0.1,
+    "attn_pdrop": 0.1,
+    "time_emb": 4,
+    "optim": "adamw",
+    "lr": 0.0001,
+    "lradj": "type1",
+    "window_size": 100
+}

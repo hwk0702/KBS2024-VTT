@@ -3,13 +3,16 @@
 models=(VTTSAT VTTPAT)
 
 ### SWaT
-python main.py \
---train \
---test \
---model AnomalyTransformer \
---dataname SWaT \
---use_multi_gpu \
---devices 0,1,2,3
+for model in ${models[@]}
+do
+  python main.py \
+  --train \
+  --test \
+  --model $model \
+  --dataname SWaT \
+  --use_multi_gpu \
+  --devices 0,1,2,3
+done
 
 # ### SMD
 for model in ${models[@]}
