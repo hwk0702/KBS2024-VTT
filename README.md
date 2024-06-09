@@ -4,6 +4,8 @@
 .
 ├── LICENSE
 ├── README.md
+├── image
+├── notebook
 └── src
     ├── data_provider    # data load, preprocessing, dataloader setting
     │   ├── dataloader.py
@@ -13,20 +15,18 @@
     │   ├── Embed.py
     │   └── Transformer_Enc.py
     ├── models
-    │   ├── LSTM_AE.py
-    │   ├── LSTM_VAE.py
-    │   ├── VariableTransformer1.py
-    │   ├── VariableTransformer2.py
-    │   ├── VariableTransformer3.py
-    │   └── VariableTransformer4.py
+    │   ├── VTTPAT.py
+    │   └── VTTSAT.py
     ├── utils    # utils
     │   ├── metrics.py   # metrics for inference
     │   ├── tools.py    # adjust learning rate, visualization, early stopping
     │   └── utils.py    # seed setting, load model, version build, progress bar, check points, log setting
+    ├── scripts    # utils
     ├── config.yaml    # configure
+    │   ├── run.sh
+    │   └── test.sh
     ├── main.py    # main code
-    ├── model.py    # model build (build, train, validation,test, inference)
-    └── run.sh    # shell script for experiment
+    └── model.py    # model build (build, train, validation,test, inference)
    
 
 5 directories, 18 files
