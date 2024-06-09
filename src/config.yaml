@@ -1,0 +1,60 @@
+# config.yaml
+
+path: ./
+log_dir: ./logs
+workers: 8
+
+# dataset
+SMD:
+  train_dir: ../data/ServerMachineDataset/train
+  test_dir: ../data/ServerMachineDataset/test
+  test_label_dir: ../data/ServerMachineDataset/test_label
+  interpretation_label_dir: ../data/ServerMachineDataset/interpretation_label
+
+SMAP:
+  train_dir: ../data/SMAP_MSL/train
+  test_dir: ../data/SMAP_MSL/test
+  test_label_path: ../data/SMAP_MSL/labeled_anomalies.csv
+
+MSL:
+  train_dir: ../data/SMAP_MSL/train
+  test_dir: ../data/SMAP_MSL/test
+  test_label_path: ../data/SMAP_MSL/labeled_anomalies.csv
+
+SWaT:
+  train_path: ../data/SWaT/SWaT.A1 _ A2_Dec 2015/Physical/SWaT_Dataset_Normal_v1.pkl
+  test_path: ../data/SWaT/SWaT.A1 _ A2_Dec 2015/Physical/SWaT_Dataset_Attack_v0.pkl
+
+scale: standard
+
+# dataloader parameters
+loader_params:
+  batch_size: 32
+  shuffle: False
+  num_workers: 8
+  pin_memory: True
+
+# model parameters
+VTTSAT:
+  hidden_size: 128
+  n_layer: 3
+  n_head: 4
+  resid_pdrop: 0.1
+  attn_pdrop: 0.1
+  time_emb: 4
+  optim: adamw
+  lr: 0.0001
+  lradj: type1
+  window_size: 100
+
+VTTPAT:
+  hidden_size: 128
+  n_layer: 3
+  n_head: 4
+  resid_pdrop: 0.1
+  attn_pdrop: 0.1
+  time_emb: 4
+  optim: adamw
+  lr: 0.0001
+  lradj: type1
+  window_size: 100
