@@ -14,7 +14,6 @@ import time
 import matplotlib.pyplot as plt
 import warnings
 import numpy as np
-import wandb
 import json
 import pdb
 
@@ -209,7 +208,7 @@ class build_model():
             if isinstance(self.model, nn.DataParallel):
                 self.model.module.load_state_dict(weights)
             else:
-                self.model.load_state_dict(weights)
+                self.model.load_state_dict(weights, map_location=self.device)
 
         # set checkpoint
         ckp = CheckPoint(logdir=self.savedir,
